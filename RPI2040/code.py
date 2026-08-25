@@ -25,7 +25,7 @@ TRIGGER_SERVO_PIN = board.GP4
 # ---------------------------------------------------------------------------
 # Calibration  (from .env: GUN_H_CALIBRATION, GUN_V_CALIBRATION, BURST_NUM)
 # ---------------------------------------------------------------------------
-GUN_H_CALIBRATION = -30
+GUN_H_CALIBRATION = -20
 GUN_V_CALIBRATION = -10
 BURST_NUM = 2
 
