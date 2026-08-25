@@ -1,0 +1,4 @@
+Slider Rubber Band Gun by Kanten_Namako on Thingiverse: https://www.thingiverse.com/thing:6731580
+
+Summary:
+A servo motor (SG90 sized) operated 5-shot rubber band gunUsing high torque servo, SG92R or equivalent is recommended.Fix the servo motor on the inner plate and rotate the servo to the 90° position, then attach a servo horn as shown in the picture.Put the trigger plate on the inner plate, then attach outer plate. Attach a muzzle retainer to the muzzle.Check the function by moving the servo from 90° to 120° .Load the rubber bands from the bottom of the staircase-shaped component to the top.A maximum of five rubber bands can be attached.To release the rubber bands, move the servo motor from 90° to 120°.https://youtu.be/MrI2VKSIGMsIf the torque of the servo motor is weak, it can be operated by reducing the number of rubber bands.
