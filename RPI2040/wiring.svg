@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="1100" height="680">
+  <style>
+    .box { fill: #f7f4ea; stroke: #222; stroke-width: 2; }
+    .board { fill: #1f6b3a; stroke: #0d331c; stroke-width: 2; }
+    .servo { fill: #e8eef6; stroke: #222; stroke-width: 2; }
+    .psu { fill: #fff3cd; stroke: #222; stroke-width: 2; }
+    .title { font: 700 22px sans-serif; fill: #111; }
+    .label { font: 600 13px sans-serif; fill: #111; }
+    .small { font: 12px sans-serif; fill: #222; }
+    .tiny { font: 11px sans-serif; fill: #333; }
+    .pin { fill: #f4d35e; stroke: #222; stroke-width: 1; }
+    .warn { fill: #fde8e8; stroke: #a33; stroke-width: 2; }
+    .note { font: 12px sans-serif; fill: #5a1a1a; }
+    .gnd { stroke: #222; stroke-width: 3; fill: none; }
+    .vcc { stroke: #c0392b; stroke-width: 3; fill: none; }
+    .sig { stroke: #d35400; stroke-width: 2.5; fill: none; }
+    .uart { stroke: #1e8449; stroke-width: 2.5; fill: none; }
+  </style>
+
+  <rect x="0" y="0" width="1100" height="680" fill="#fafafa"/>
+  <text x="40" y="40" class="title">RP2040-Zero wiring  RD-03D + 3 servos</text>
+  <text x="40" y="62" class="small">Common ground required. Power servos from the external 5V supply, not the RP2040 3.3V pin.</text>
+
+  <!-- Radar -->
+  <rect class="box" x="40" y="100" width="200" height="190" rx="6"/>
+  <text x="58" y="128" class="label">RD-03D radar</text>
+  <rect class="pin" x="190" y="150" width="36" height="18"/>
+  <text x="58" y="164" class="small">VCC  (5V)</text>
+  <rect class="pin" x="190" y="180" width="36" height="18"/>
+  <text x="58" y="194" class="small">GND</text>
+  <rect class="pin" x="190" y="210" width="36" height="18"/>
+  <text x="58" y="224" class="small">TX   í GP1</text>
+  <rect class="pin" x="190" y="240" width="36" height="18"/>
+  <text x="58" y="254" class="small">RX   ê GP0</text>
+
+  <!-- RP2040 -->
+  <rect class="board" x="430" y="90" width="240" height="320" rx="8"/>
+  <rect x="500" y="90" width="100" height="18" fill="#cfd8dc" stroke="#333"/>
+  <text x="518" y="104" class="tiny">USB-C</text>
+  <text x="458" y="140" fill="#fff" class="label">RP2040-Zero</text>
+  <text x="458" y="160" fill="#dcead6" class="tiny">CircuitPython code.py</text>
+
+  <rect class="pin" x="640" y="180" width="30" height="16"/>
+  <text x="448" y="193" fill="#fff" class="small">GP0  TX</text>
+  <rect class="pin" x="640" y="210" width="30" height="16"/>
+  <text x="448" y="223" fill="#fff" class="small">GP1  RX</text>
+  <rect class="pin" x="640" y="250" width="30" height="16"/>
+  <text x="448" y="263" fill="#fff" class="small">GP2  TURN</text>
+  <rect class="pin" x="640" y="280" width="30" height="16"/>
+  <text x="448" y="293" fill="#fff" class="small">GP3  UP</text>
+  <rect class="pin" x="640" y="310" width="30" height="16"/>
+  <text x="448" y="323" fill="#fff" class="small">GP4  TRIGGER</text>
+  <rect class="pin" x="430" y="350" width="30" height="16"/>
+  <text x="468" y="363" fill="#fff" class="small">GND</text>
+  <rect class="pin" x="430" y="378" width="30" height="16"/>
+  <text x="468" y="391" fill="#fff" class="small">5V (board only)</text>
+
+  <!-- Servos -->
+  <rect class="servo" x="820" y="120" width="240" height="90" rx="6"/>
+  <text x="836" y="144" class="label">TURN servo  (h)</text>
+  <text x="836" y="166" class="small">SIG  ê GP2   (orange)</text>
+  <text x="836" y="184" class="small">VCC  ê 5V PSU (red)</text>
+  <text x="836" y="202" class="small">GND  ê common (brown)</text>
+
+  <rect class="servo" x="820" y="230" width="240" height="90" rx="6"/>
+  <text x="836" y="254" class="label">UP servo  (v)</text>
+  <text x="836" y="276" class="small">SIG  ê GP3   (orange)</text>
+  <text x="836" y="294" class="small">VCC  ê 5V PSU (red)</text>
+  <text x="836" y="312" class="small">GND  ê common (brown)</text>
+
+  <rect class="servo" x="820" y="340" width="240" height="90" rx="6"/>
+  <text x="836" y="364" class="label">TRIGGER servo</text>
+  <text x="836" y="386" class="small">SIG  ê GP4   (orange)</text>
+  <text x="836" y="404" class="small">VCC  ê 5V PSU (red)</text>
+  <text x="836" y="422" class="small">GND  ê common (brown)</text>
+
+  <!-- PSU -->
+  <rect class="psu" x="40" y="500" width="320" height="140" rx="6"/>
+  <text x="58" y="528" class="label">External 5V supply  (e 2 A)</text>
+  <text x="58" y="550" class="small">+5V  í radar VCC + all 3 servo red wires</text>
+  <text x="58" y="570" class="small">GND  í radar GND + RP2040 GND + all servo GND</text>
+  <text x="58" y="598" class="tiny">Do not share only USB 5V for three servos.</text>
+  <text x="58" y="616" class="tiny">The RP2040 can stay powered from USB-C.</text>
+
+  <!-- Warning -->
+  <rect class="warn" x="390" y="500" width="670" height="140" rx="6"/>
+  <text x="410" y="528" class="label">Wiring rules</text>
+  <text x="410" y="552" class="note">1. Tie every GND together: PSU, RP2040, RD-03D, and all three servos.</text>
+  <text x="410" y="572" class="note">2. Servo signal is 3.3 V PWM from GP2 / GP3 / GP4  that is enough for most hobby servos.</text>
+  <text x="410" y="592" class="note">3. Never feed servo VCC from the RP2040 3.3 V pin. Current spikes will brown-out the MCU.</text>
+  <text x="410" y="612" class="note">4. UART is 256000 baud: RD-03D TXíGP1, RD-03D RXíGP0. Cross TX/RX, do not match names.</text>
+
+  <!-- Wires: UART -->
+  <path class="uart" d="M226 219 H400 V218 H640"/>
+  <path class="uart" d="M226 249 H380 V188 H640"/>
+  <text x="300" y="208" class="tiny" fill="#1e8449">TXíRX</text>
+  <text x="268" y="178" class="tiny" fill="#1e8449">RXêTX</text>
+
+  <!-- Wires: servo signals -->
+  <path class="sig" d="M670 258 H790 V165 H820"/>
+  <path class="sig" d="M670 288 H770 V275 H820"/>
+  <path class="sig" d="M670 318 H790 V385 H820"/>
+
+  <!-- VCC / GND hints -->
+  <path class="vcc" d="M226 159 H360 V470 H200"/>
+  <path class="gnd" d="M226 189 H340 V470 H80"/>
+  <path class="gnd" d="M430 358 H360"/>
+</svg>
